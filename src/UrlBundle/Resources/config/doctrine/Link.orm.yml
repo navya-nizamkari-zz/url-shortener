@@ -1,0 +1,31 @@
+UrlBundle\Entity\Link:
+  type: entity
+  table: link
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    long_url:
+      type: string
+      length: 255
+    short_url:
+      type: string
+      length: 255
+      unique: true
+    token:
+      type: string
+      length: 255
+  oneToMany:
+    views:
+      targetEntity: View
+      mappedBy: link
+  manyToOne:
+      user:
+        targetEntity: User
+        inversedBy: links
+        joinColumn:
+          name: user_id
+          referencedColumnName: id
+          nullable: true
+

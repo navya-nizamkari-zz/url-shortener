@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>View</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ view.id }}</td>
+            </tr>
+            <tr>
+                <th>Ip_address</th>
+                <td>{{ view.ipaddress }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{% if view.createdat %}{{ view.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Token</th>
+                <td>{{ view.token }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('view_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('view_edit', { 'id': view.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

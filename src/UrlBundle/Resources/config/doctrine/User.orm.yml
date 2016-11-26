@@ -1,0 +1,19 @@
+UrlBundle\Entity\User:
+  type: entity
+  table: user
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+    email:
+      type: string
+      length: 255
+      unique: true  
+  oneToMany:
+    links:
+      targetEntity: Link
+      mappedBy: user

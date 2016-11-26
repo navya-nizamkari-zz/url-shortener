@@ -1,0 +1,24 @@
+view_index:
+    path:     /
+    defaults: { _controller: "UrlBundle:View:index" }
+    methods:  GET
+
+view_show:
+    path:     /{id}/show
+    defaults: { _controller: "UrlBundle:View:show" }
+    methods:  GET
+
+view_new:
+    path:     /new
+    defaults: { _controller: "UrlBundle:View:new" }
+    methods:  [GET, POST]
+
+view_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UrlBundle:View:edit" }
+    methods:  [GET, POST]
+
+view_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UrlBundle:View:delete" }
+    methods:  DELETE

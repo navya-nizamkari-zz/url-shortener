@@ -1,0 +1,15 @@
+url_link:
+    resource: "@UrlBundle/Resources/config/routing/link.yml"
+    prefix:   /link
+
+url_user:
+    resource: "@UrlBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+url_view:
+    resource: "@UrlBundle/Resources/config/routing/view.yml"
+    prefix:   /view
+
+url_homepage:
+    path:     /
+    defaults: { _controller: UrlBundle:Default:index }

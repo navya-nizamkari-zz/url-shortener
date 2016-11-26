@@ -1,0 +1,25 @@
+UrlBundle\Entity\View:
+  type: entity
+  table: view
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    ip_address:
+      type: string
+      length: 50
+    created_at:
+      type: datetime
+    token:
+      type: string
+      length: 255
+  manyToOne:
+    link:
+      targetEntity: Link
+      inversedBy: views
+      joinColumn:
+        name: link_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
