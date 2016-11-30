@@ -7,6 +7,9 @@ This website can be used to shorten any URL. So what's different about it as com
 
 It is built using Symfony framework.
 
+![alt tag](https://github.com/navya-nizamkari/url-shortener/blob/master/shot.png)
+
+
 To shorten URL's using REST API : 
 
 Hit the following :
