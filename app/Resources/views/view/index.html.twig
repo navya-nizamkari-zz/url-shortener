@@ -1,43 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Views list</h1>
+    <h4 align="center">Views list of shortend URL : {{ link }}</h4>
 
-    <table>
+    <table align="center" cellpadding="5px" cellspacing="5px">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Ip_address</th>
-                <th>Created_at</th>
-                <th>Token</th>
-                <th>Actions</th>
+            <tr>           
+                <th>Ip address</th>
+                <th>   </th>
+                <th>Viewed at</th>  
             </tr>
         </thead>
         <tbody>
         {% for view in views %}
             <tr>
-                <td><a href="{{ path('view_show', { 'id': view.id }) }}">{{ view.id }}</a></td>
-                <td>{{ view.ipaddress }}</td>
-                <td>{% if view.createdat %}{{ view.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ view.token }}</td>
+                <td>{{ view.ip_address }}</td>
+                <td>{% if view.created_at %}{{ view.created_at|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('view_show', { 'id': view.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('view_edit', { 'id': view.id }) }}">edit</a>
-                        </li>
-                    </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('view_new') }}">Create a new view</a>
-        </li>
-    </ul>
 {% endblock %}

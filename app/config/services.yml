@@ -7,3 +7,12 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+      crv.doctrine_entity_repository.link:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine", getRepository]
+        arguments:
+            - UrlBundle\Entity\Link
+      
+      urlshortener.base62:
+        class: UrlBundle\Services\Base62Service

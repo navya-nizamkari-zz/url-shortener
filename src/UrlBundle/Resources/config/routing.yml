@@ -13,3 +13,23 @@ url_view:
 url_homepage:
     path:     /
     defaults: { _controller: UrlBundle:Default:index }
+
+url_pageviews:
+    path:     /pageviews
+    defaults: { _controller: UrlBundle:Default:page }
+    
+url_analytics:
+    path:     /analytics
+    defaults: { _controller: UrlBundle:Links:analytics }
+
+redirectpage:
+    path:     /l/{short_url}
+    defaults: { _controller: UrlBundle:Default:redirect }
+    
+emptypage:
+    path:     /l
+    defaults: { _controller: UrlBundle:Links:empty }
+
+createNew:
+    path:     /create
+    defaults: { _controller: UrlBundle:Links:create }

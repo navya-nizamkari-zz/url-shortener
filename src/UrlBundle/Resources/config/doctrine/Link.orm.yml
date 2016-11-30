@@ -1,15 +1,16 @@
 UrlBundle\Entity\Link:
   type: entity
   table: link
+  repositoryClass: UrlBundle\Entity\LinkRepository
   id:
     id:
       type: integer
       generator: { strategy: AUTO }
   fields:
-    long_url:
+    longUrl:
       type: string
       length: 255
-    short_url:
+    shortUrl:
       type: string
       length: 255
       unique: true

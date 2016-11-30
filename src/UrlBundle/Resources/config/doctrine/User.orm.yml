@@ -1,6 +1,7 @@
 UrlBundle\Entity\User:
   type: entity
   table: user
+  repositoryClass: UrlBundle\Entity\LinkRepository 
   id:
     id:
       type: integer

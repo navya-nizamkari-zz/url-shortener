@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<style type="text/css">
+td
+{
+    padding:0 15px 0 15px;
+}
+</style>
+  <head>
+    <title>
+      {% block title %}
+        UrlShortener
+      {% endblock %}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('bundles/url/css/main.css') }}" type="text/css" media="all" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+      
+    {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ asset('bundles/url/images/favicon.ico') }}" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div class="content">
+          <h1><a href="">
+            <img src="{{ asset('bundles/url/images/logo.jpg') }}" alt="Url Shortnener" />
+          </a></h1>
+                   {% block body %}{% endblock %}
+        </div>
+      </div>
+      <div id="content">
+        
+ 
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+      </div>
+ 
+      <div id="footer">
+        <div class="content">
+          
+          <ul>
+            <li><a href="http://docs.urlshortener2.apiary.io/#">API Documentation</a></li>
+            <li><a href="">Github</a></li>
+            <li><a href="http://localhost:8000">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
